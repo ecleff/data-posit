@@ -7,7 +7,7 @@ let table;
 function preload() {
   // my table is comma separated value "csv"
   // and has a header specifying the columns labels
-  table = loadTable('./2022.12.01_abortionaccess_countyxmonth.csv', 'csv', 'header');
+  table = loadTable('./abortion_data.csv', 'csv', 'header');
   
 }
 
@@ -27,8 +27,7 @@ function draw() {
   console.log('Num cols: '+table.getColumnCount())
   console.log('Num rows: '+ table.getRowCount())
   
-  console.log('Num cols: '+parks_table.getColumnCount())
-  console.log('Num rows: '+ parks_table.getRowCount())
+ 
   
   // loading in font family for canvas
   textFont('Lato');
