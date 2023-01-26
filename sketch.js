@@ -105,5 +105,3 @@ function draw() {
   // this function prevents p5 from looping over and over, since we don't need animation
   noLoop()
 }
-
-

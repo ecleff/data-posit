@@ -1,9 +1,9 @@
 /* a minimalist set of CSS resets */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,200&display=swap");
 * {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
  /*sans-serif is the "fallback font"
 /*   fhref="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" */
 }
@@ -42,13 +42,15 @@ canvas {
 
 /*  title styling */
 .title {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-style: 900;
   font-weight: bold;
   font-size: 40px;
   line-height: 105%;
-  margin: 10px;
+  margin: 20px;
   position: relative;
+  color: #701f41;
+  position: center;
 }
 /*  embedded image styling */
 .illustration {
