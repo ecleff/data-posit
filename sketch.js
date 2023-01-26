@@ -16,7 +16,7 @@ function preload() {
 // happens only once, after preload() triggers
 function setup() {
   createCanvas(1000, 1000);
-  background(236, 246, 254); 
+  background(247, 252, 255); 
   // console out the table and look for the columns we are interested in
   // using the developer tools of the browser (Command+Option+i on a Mac or "Inspect" on right click)
   console.log(table)
@@ -69,7 +69,7 @@ function draw() {
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
    strokeWeight(2)
-   fill(210, 7, 100)
+   fill(202, 3, 100)
     circle(x,y,distance/5);
     // rect(x, y, 10, distance/10);
   }
