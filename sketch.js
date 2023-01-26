@@ -40,6 +40,7 @@ function draw() {
 //     // getNum() method takes two arguments: first is the row index, and second is the column index
 //     // if we pass in 5, then we are grabbing data for this row from column number 6
 //     // you can change the number to access different columns in the CSV
+
   for (let row = 0; row < table.getRowCount(); row++) {
     let year = table.getNum(row,2)
     let state_id = table.getNum(row,9)
@@ -51,30 +52,29 @@ function draw() {
     
   //  each row in this matrix is a state (Y is mapped to state, ie. a number assigned to each state (1-51))
     let y = (state_id*17)+50
-
-    
     // 
+    colorMode(HSB);
     if (distance > 90){
 
-      stroke(184, 51, 106)
+      stroke(335, 72, 72)
    } else if(distance > 72 && distance < 90){
-    stroke(196, 144, 209)
+    stroke(335, 49, 85)
      }
       else if(distance < 72 && distance > 37){
-        stroke(172, 172, 222)
+        stroke(335, 25, 91)
      } 
       else {
-        stroke(61, 168, 245)
+        stroke(335, 9, 96)
    }
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
-   strokeWeight(3)
-   fill(235, 246, 254,40)
+   strokeWeight(2)
+   fill(210, 7, 100)
     circle(x,y,distance/5);
     // rect(x, y, 10, distance/10);
   }
 
-// sketching the parallel line plot for states
+//  REMOVED - sketching the parallel line plot for states
 
 // // axes lines
 // line(10, 1000, 10, 2900)
