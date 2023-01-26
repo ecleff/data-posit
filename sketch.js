@@ -15,8 +15,8 @@ function preload() {
 
 // happens only once, after preload() triggers
 function setup() {
-  createCanvas(1000, 3000);
-  background(243, 246, 247); 
+  createCanvas(1000, 1000);
+  background(236, 246, 254); 
   // console out the table and look for the columns we are interested in
   // using the developer tools of the browser (Command+Option+i on a Mac or "Inspect" on right click)
   console.log(table)
@@ -47,50 +47,61 @@ function draw() {
     let distance = table.getNum(row, 3)
     
     // X is year from 2009-2022
-    let x = map(year, 2009, 2022, 10, width)
+    let x = map(year, 2009, 2022, 40, width-40)
     
   //  each row in this matrix is a state (Y is mapped to state, ie. a number assigned to each state (1-51))
-    let y = (state_id*15)+50
+    let y = (state_id*17)+50
 
     
-    // map fill to population - not working rn
+    // 
     if (distance > 90){
 
-      fill(184, 51, 106)
+      stroke(184, 51, 106)
    } else if(distance > 72 && distance < 90){
-       fill(196, 144, 209)
+    stroke(196, 144, 209)
      }
       else if(distance < 72 && distance > 37){
-       fill(172, 172, 222)
+        stroke(172, 172, 222)
      } 
       else {
-  
-      fill(229, 252, 255)
+        stroke(61, 168, 245)
    }
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
-    rect(x,y,distance)
+   strokeWeight(3)
+   fill(235, 246, 254,40)
+    circle(x,y,distance/5);
+    // rect(x, y, 10, distance/10);
   }
 
 // sketching the parallel line plot for states
 
-// axes lines
-line(10, 1000, 10, 2900)
-line(990, 1000, 990, 2900)
-for (let row=0; row<states_matchup_table.getRowCount(); row++) {
-// map the origin and destination state IDs to line lengths
-  let origin_id = states_matchup_table.getNum(row, 3);
-  let dest_id = states_matchup_table.getNum(row, 4);
-// why isnt this working
-  let y1 = map(origin_id, 1, 51, 1000, 2900);
-  let y2 = map(dest_id, 1,51, 1000,2900);
+// // axes lines
+// line(10, 1000, 10, 2900)
+// line(990, 1000, 990, 2900)
+// for (let row=0; row<states_matchup_table.getRowCount(); row++) {
+// // map the origin and destination state IDs to line lengths
+//   let origin_id = states_matchup_table.getNum(row, 3);
+//   let dest_id = states_matchup_table.getNum(row, 4);
+// // why isnt this working
+//   let y1 = map(origin_id, 1, 51, 1000, 2900);
+//   let y2 = map(dest_id, 1,51, 1000,2900);
 
-  let x1 = 10;
-  let x2 = 990;
+//   let x1 = 10;
+//   let x2 = 990;
 
-// draw lines
-  line(x1, y1, x2, y2)
-};
+//   // color
+//   if(origin_id === dest_id) {
+//     stroke(184, 51, 106, 40)
+//   }
+//   else {
+//     stroke(196, 144, 209, 40)
+//   }
+
+// // draw lines
+// // strokeWeight(0.5)
+//   line(x1, y1, x2, y2)
+// };
   // this function prevents p5 from looping over and over, since we don't need animation
   noLoop()
 }

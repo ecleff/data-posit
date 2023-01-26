@@ -28,14 +28,15 @@ body {
   margin: 1rem;
   font-family: "Lato", sans-serif;
   line-height: 1.5;
-  background-color: #faf6f0;
+  background-color: #ecf6fe;
   color: #333333;
 }
 
 canvas {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   font-family: "Lato", sans-serif;
   margin: 10px;
+
 }
 
 
