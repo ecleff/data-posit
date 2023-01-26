@@ -10,8 +10,7 @@ function preload() {
   // my table is comma separated value "csv"
   // and has a header specifying the columns labels
   table = loadTable('./abortion_states_breakdown.csv', 'csv', 'header');
-  states_matchup_table = loadTable('./states_matchup.csv', 'csv', 'header')
-  
+  states_matchup_table = loadTable('./states_matchup.csv', 'csv', 'header');
 }
 
 // happens only once, after preload() triggers
@@ -21,6 +20,7 @@ function setup() {
   // console out the table and look for the columns we are interested in
   // using the developer tools of the browser (Command+Option+i on a Mac or "Inspect" on right click)
   console.log(table)
+  console.log(states_matchup_table)
 
 }
 
@@ -79,15 +79,18 @@ line(10, 1000, 10, 2900)
 line(990, 1000, 990, 2900)
 for (let row=0; row<states_matchup_table.getRowCount(); row++) {
 // map the origin and destination state IDs to line lengths
-  let origin_state = states_matchup_table.getNum(row,4);
-  let dest_state = states_matchup_table.getNum(row,5);
+  let origin_id = states_matchup_table.getNum(row, 3);
+  let dest_id = states_matchup_table.getNum(row, 4);
 // why isnt this working
-  let y1 = map(origin_state, 1, 51, 1000, 2900)
-  let y2 = map(dest_state, 1,51, 1000,2900)
-// draw lines
-  line(10, y1, 990, y2)
-}
+  let y1 = map(origin_id, 1, 51, 1000, 2900);
+  let y2 = map(dest_id, 1,51, 1000,2900);
 
+  let x1 = 10;
+  let x2 = 990;
+
+// draw lines
+  line(x1, y1, x2, y2)
+};
   // this function prevents p5 from looping over and over, since we don't need animation
   noLoop()
 }
