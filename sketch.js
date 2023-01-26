@@ -43,7 +43,7 @@ function draw() {
     let year = table.getNum(row,2)
     let state_id = table.getNum(row,9)
     let population = table.getNum(row,4)
-    let end_state_status_pct = table.getNum(row, 7)
+    let distance = table.getNum(row, 3)
     
     // X is year from 2009-2022
     let x = map(year, 2009, 2022, 10, width)
@@ -53,11 +53,22 @@ function draw() {
 
     
     // map fill to population - not working rn
-    let color_scheme = map(population, 240, 250, 50, 144)
-    fill(color_scheme)
+    if (distance > 90){
+
+      fill(184, 51, 106)
+   } else if(distance > 72 && distance < 90){
+       fill(196, 144, 209)
+     }
+      else if(distance < 72 && distance > 37){
+       fill(172, 172, 222)
+     } 
+      else {
+  
+      fill(229, 252, 255)
+   }
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
-    rect(x,y,end_state_status_pct)
+    rect(x,y,distance)
   }
 
   // this function prevents p5 from looping over and over, since we don't need animation
