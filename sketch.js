@@ -32,6 +32,8 @@ function draw() {
 
   console.log('Num cols: '+states_matchup_table.getColumnCount())
   console.log('Num rows: '+ states_matchup_table.getRowCount())
+
+  textFont('Roboto Mono');
   
 
   // loop through the table for every row in the CSV using getRowCount()
@@ -69,9 +71,28 @@ function draw() {
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
    strokeWeight(2)
-   fill(202, 3, 100)
+   fill(202, 3, 100, 0.3)
     circle(x,y,distance/5);
     // rect(x, y, 10, distance/10);
+
+
+    // labeling the years along the x axis
+    fill(335, 72, 44)
+    strokeWeight(0.5)
+    text('2009', 30, 10, 200,200)
+    text('2010', 100, 10, 200,200)
+    text('2011', 170, 10, 200,200)
+    text('2012', 240, 10, 200,200)
+    text('2013', 310, 10, 200,200)
+    text('2014', 380, 10, 200,200)
+    text('2015', 450, 10, 200,200)
+    text('2016', 530, 10, 200,200)
+    text('2017', 600, 10, 200,200)
+    text('2018', 670, 10, 200,200)
+    text('2019', 740, 10, 200,200)
+    text('2020', 810, 10, 200,200)
+    text('2021', 880, 10, 200,200)
+    text('2022', 950, 10, 200,200)
   }
 
 //  REMOVED - sketching the parallel line plot for states
