@@ -58,15 +58,15 @@ function draw() {
     colorMode(HSB);
     if (distance > 90){
 
-      stroke(335, 72, 72)
+      stroke(359, 63, 53)
    } else if(distance > 72 && distance < 90){
-    stroke(335, 49, 85)
+    stroke(359, 63, 70)
      }
       else if(distance < 72 && distance > 37){
-        stroke(335, 25, 91)
+        stroke(359, 47, 78)
      } 
       else {
-        stroke(335, 9, 96)
+        stroke(359, 25, 87)
    }
 
   // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
@@ -77,8 +77,8 @@ function draw() {
 
 
     // labeling the years along the x axis
-    fill(335, 72, 44)
-    strokeWeight(0.5)
+    fill(359, 63, 53)
+    strokeWeight(0.3)
     text('2009', 30, 10, 200,200)
     text('2010', 100, 10, 200,200)
     text('2011', 170, 10, 200,200)
@@ -94,6 +94,62 @@ function draw() {
     text('2021', 880, 10, 200,200)
     text('2022', 950, 10, 200,200)
   }
+
+// alternative sketch
+
+
+// for (let row = 0; row < table.getRowCount(); row++) {
+//   let year = table.getNum(row,2)
+//   let state_id = table.getNum(row,9)
+//   // let population = table.getNum(row,4)
+//   let distance = table.getNum(row, 3)
+  
+//   // X is year from 2009-2022
+//   let x = map(year, 2009, 2022, 40, width-40)
+  
+// //  each row in this matrix is a state (Y is mapped to state, ie. a number assigned to each state (1-51))
+//   let y = (state_id*17)+50
+//   // 
+//   colorMode(HSB);
+//   if (distance > 90){
+
+//     fill(335, 72, 72, 0.5)
+//  } else if(distance > 72 && distance < 90){
+//   fill(335, 49, 85, 0.5)
+//    }
+//     else if(distance < 72 && distance > 37){
+//       fill(335, 25, 91, 0.5)
+//    } 
+//     else {
+//       fill(335, 9, 96, 0.5)
+//  }
+
+// // the size of the rectangle is mapped to the percentage of counties that must go out of state to access an abortion
+// //  strokeWeight(2)
+// //  fill(202, 3, 100, 0.3)
+//   // circle(x,y,distance/5);
+//   rect(x, y, distance/2, 50);
+
+
+//   // labeling the years along the x axis
+//   fill(335, 72, 44)
+//   strokeWeight(0.5)
+//   text('2009', 30, 10, 200,200)
+//   text('2010', 100, 10, 200,200)
+//   text('2011', 170, 10, 200,200)
+//   text('2012', 240, 10, 200,200)
+//   text('2013', 310, 10, 200,200)
+//   text('2014', 380, 10, 200,200)
+//   text('2015', 450, 10, 200,200)
+//   text('2016', 530, 10, 200,200)
+//   text('2017', 600, 10, 200,200)
+//   text('2018', 670, 10, 200,200)
+//   text('2019', 740, 10, 200,200)
+//   text('2020', 810, 10, 200,200)
+//   text('2021', 880, 10, 200,200)
+//   text('2022', 950, 10, 200,200)
+// }
+
 
 //  REMOVED - sketching the parallel line plot for states
 
@@ -125,4 +181,6 @@ function draw() {
 // };
   // this function prevents p5 from looping over and over, since we don't need animation
   noLoop()
+
+  // saveCanvas('data-posit-2', 'jpg');
 }
